@@ -1,0 +1,13 @@
+path: /home/giannis/paper2/data/datasets_Helicoverpa_armigera_10k
+train:  /home/giannis/paper2/data/datasets_Plodia_interpunctella_10k/images/train
+val:    /home/giannis/paper2/data/datasets_Plodia_interpunctella_10k/images/val
+
+
+# Classes
+nc: 2  # number of classes
+names: ['debris','insects']  # class names
+
+
+# Download script/URL (optional)
+download: |
+  from utils.general import download, Path

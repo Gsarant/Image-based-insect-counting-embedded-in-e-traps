@@ -1,0 +1,8 @@
+ Helicoverpa_armigera_Yolov8_color_10k_overlap 	 Conf 0.3 	 IOU 0.4 	 A:0.6509 	 MAE:0.6981 	 MSE:0.6981 	 MAPE:34.906% 	 RMSE:0.8355 	 AE 0.30% 	 AVG_TIME 101.0
+ Helicoverpa_armigera_Yolov8_color_10k_overlap 1-20 	 Conf 0.3 	 IOU 0.4 	 A:0.6509 	 MAE:0.6981 	 MSE:0.6981 	 MAPE:34.906% 	 RMSE:0.8355 	 AE 0.30% 	 AVG_TIME 101.0
+ Helicoverpa_armigera_Yolov8_color_10k 	 Conf 0.3 	 IOU 0.4 	 A:0.7005 	 MAE:5.6580 	 MSE:74.8958 	 MAPE:28.651% 	 RMSE:8.6542 	 AE 0.35% 	 AVG_TIME 59.5
+ Helicoverpa_armigera_Yolov8_color_10k 1-20 	 Conf 0.3 	 IOU 0.4 	 A:0.7189 	 MAE:4.0871 	 MSE:23.4111 	 MAPE:26.717% 	 RMSE:4.8385 	 AE 0.37% 	 AVG_TIME 59.4
+ Helicoverpa_armigera_Yolov8_color_10k 50-100 	 Conf 0.3 	 IOU 0.4 	 A:0.4360 	 MAE:28.2000 	 MSE:813.7000 	 MAPE:56.400% 	 RMSE:28.5254 	 AE 0.00% 	 AVG_TIME 60.3
+ Plodia_interpunctella_Yolov8_color_10k 	 Conf 0.3 	 IOU 0.7 	 A:0.6632 	 MAE:22.9176 	 MSE:905.3176 	 MAPE:28.976% 	 RMSE:30.0885 	 AE 0.39% 	 AVG_TIME 63.2
+ Plodia_interpunctella_Yolov8_color_10k 1-20 	 Conf 0.3 	 IOU 0.7 	 A:0.4893 	 MAE:4.6429 	 MSE:40.7857 	 MAPE:22.500% 	 RMSE:6.3864 	 AE 0.50% 	 AVG_TIME 63.1
+ Plodia_interpunctella_Yolov8_color_10k 50-100 	 Conf 0.3 	 IOU 0.7 	 A:0.6975 	 MAE:26.5211 	 MSE:1075.7887 	 MAPE:30.254% 	 RMSE:32.7992 	 AE 0.37% 	 AVG_TIME 63.2
