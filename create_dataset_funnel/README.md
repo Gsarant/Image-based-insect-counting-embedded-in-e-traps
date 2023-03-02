@@ -3,36 +3,16 @@
 We create synthetic dataset for deep learning trainnig.
 
 
-## Training and Validation Dataset.
-The Training sets, Validation sets and annotations were generated with the following method.
+## Construct Training and Validation Dataset.
+We first collect agricultural pests with typical funnel traps from the field and we subsequently terminate the pests by freezing them. We then carefully position each insect in a preselected, marked location in the e-funnel’s bucket. The angle does not matter as we will rotate the extracted picture later, but we make sure that either the back-wings or the abdomen faces the camera. We then take a picture of the single specimen using the embedded camera that is activated manually by an external bouton. We take one picture per insect (see Fig. 2-left) and we make sure that the training set contains different individuals from the test set. Since we place the insect in a specific location in the backet we can automatically extract from its picture a square containing the insect with almost absolute accuracy as we know beforehand its location (see Fig. 2-bottom). Alternatively, we could perform blob detection and automatically extract the contour of the insect. However, we experimentally found that the former approach is more precise in the presence of shadows. We then remove its background using the python library Rembg (https://github.com/danielgatis/rembg ) that is based on a UNet (see Fig. 2-bottom). This creates a subpicture that follows the contour of the insect closely. Once we have the pictures of the insects, we can proceed in composing the training corpus for all algorithms. A python program selects randomly a picture of an empty bucket that can only have debris that works as a background canvas for the synthesis that places the extracted insect sub-pictures in random locations by uniformly sampling 360 degrees and a radius matching the radius of the bucket (the bottom of the bucket is circular). Besides their random locations, the orientation of each specimen is randomly selected between 0 and 360 degrees before placement, and a uniformly random zoom of ±10% of its size also applies. The number of insects is randomly chosen from a uniform probability distribution between 0-60 for H. armigera and 0-110 for P. interpunctella. We have chosen the upper limit of the distribution by noting that with more than 25 insects of H. armigera, the layering process of insects starts, and image counting becomes by default problematic. Note that, since the e-trap self-disposes the captured insects there is no problem in setting an upper limit other than the power consumption of the rotation process. The upper limit for P. interpunctella is larger because this insect is very small compared to H. armigera and layering, in this case, starts after 100 specimens. Since the program controls the number of insects used to synthesize a picture it also has available their locations and their bounding boxes, and, therefore, can provide the annotated text (i.e., the label) for supervised regressor counters as well as localization algorithms (i.e., YOLO7) and crowd counting approaches. The initial 1664x1232 pixels picture is resized to a resolution of 480x320 pixels for YOLO7 and crowd counting methods to achieve the lowest possible power consumption and storage needs while not affecting the ability of the algorithms to count insects. We synthesized a corpus of 10000 pictures for training and 500 for validation. Starting from the original pictures it takes about 1 sec to construct and fully label (counts and bounding boxes) a synthesized picture. This needs to be contrasted to the time of manual labeling of insects in pictures to see the advantage of our approach.
 
-### Steps
-1. We took some photos from an empty funnel trap or one with specks of dirt in it (set of image [class0](https://drive.google.com/file/d/1-47kKdPrK8Yyw5ZPl7l4keTz6_KuHFL2/view?usp=share_link) ).
-2. We put in and posed an insect, then took a photo with raspberry pi zero. 
-3. This step is repeated with insects of both types.
-We were left with two sets of images (one for each type of insect)  with a funnel trap as background and said insect in a specific position. (Helicoverpa armigera images set [class_1_fixed.tar.gz](https://drive.google.com/file/d/1-KV_UFt07zjjtZxBmG_vO4QTxoaULq-6/view?usp=share_link) and Plodia interpunctella images set [class_2_fixed.tar.gz](https://drive.google.com/file/d/1-KXeEdTuEOycDd9MRC8r4csz-Ox9RmEU/view?usp=share_link) )
-
-We passed  these image sets  from create_insect_dataset_rembg.py and cropped the posed insect from the funnel trap. This leaves us with two sets of images; one with natural lighting and the insects in different body posture. ([Helicoverpa_armigera_insects_new.tar.gz](https://drive.google.com/file/d/1-N29XwUH_AyjFeHnz69N9klgvkQYZpk-/view?usp=share_link) and [Plodia_interpunctella_insects_new.tar.gz](https://drive.google.com/file/d/1-RmWV4w4dd30gTQnCOyi0O98fiqt0Fys/view?usp=share_link)
-
-### create_insect_dataset_rembg.py
-This program crops the posed insect, removes the background , and passes the image through a number of filters. it then saves the insect in an image with a white background. This way two sets of images are created, one set for Helicoverpa armigera and another one for Plodia interpunctella.
-
-### create_dataset_funnel
-This program creates new images, from empty funnel trap images [class0](https://drive.google.com/file/d/1-47kKdPrK8Yyw5ZPl7l4keTz6_KuHFL2/view?usp=share_link) and the images with cropped insects from the steps below. With the method presented, one can create thousands of images that look like natural images from the funnel trap.
-
-#### Steps
-1. Take an image of an empty funnel trap.
-2. Put in a random position insects,in a random pose, one random image from insects sets from the steps below.
-3. Create an annotation for this insect and continue. The annotation style and folder hierarchy are meant for the yolo training model.
-4. For data augmentation the program changes the lighting, the color contrast, while also rotating the insects horizontally or by 45 degrees. All these changes are made at a rate of 20%.
-5. Occasionally, add more specks of dirt. [dirtes.tar.gz](https://drive.google.com/file/d/1-WiVJMtZjTjux1d7ssDGvB8cqx5QFAfW/view?usp=share_link)
 #### Groups of insects
 For more natural rendering 40% of image insects create (1-2) neighbor groups of insects that are too close to each other or overlap one part of the other.
 ![first two insects in neighbor groups](images/2insect.jpg)
 ![add more insects to neighbor groups](images/3d4dinsect.jpg)
 
 
-###Datasets 
+### Datasets 
  * Helicoverpa armigera insects ( [datasets_Helicoverpa_armigera_10k.tar.xz](https://drive.google.com/file/d/1aWR88TkmgFx1P3M4xPtRFR5hBrM0jBR8/view?usp=share_link)), 
 * Plodia interpunctella insects ( [datasets_Plodia_interpunctella_10k.tar.xz](https://drive.google.com/file/d/1vK1oZkMkCG_Q0vFTzUhovSYLUn5AfiWB/view?usp=share_link) ). Every dataset has 10.000  images for the Train set and 500 for the Validation set.
 
