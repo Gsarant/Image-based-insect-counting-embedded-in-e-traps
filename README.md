@@ -93,6 +93,13 @@
 * [Plodia croped insects images](https://drive.google.com/file/d/1-RmWV4w4dd30gTQnCOyi0O98fiqt0Fys/view?usp=share_link)
 * [Helicoverpa dataset images](https://drive.google.com/file/d/1aWR88TkmgFx1P3M4xPtRFR5hBrM0jBR8/view?usp=sharing)
 * [Plodia dataset images](https://drive.google.com/file/d/1vK1oZkMkCG_Q0vFTzUhovSYLUn5AfiWB/view?usp=sharing)
+* [Count Regression Pytorch Models](https://drive.google.com/drive/folders/134VitRY9ZOnTqoVMZfZ6PdsAaeDh6u2g?usp=sharing) 
+* [CSRnet Crowd Counting Pytorch Models](https://drive.google.com/drive/folders/1re1IpdehEwzmgX9t_C8_1O-UYy2yvOkY?usp=sharing) 
+* [Yolov7 Pytorch Models](https://drive.google.com/drive/folders/1hOB2hYBwvxH8NEi7xiOg9yb2qTDQyt8q?usp=sharing) 
+* [Yolov7 Pytorch Models](https://drive.google.com/drive/folders/1w1LrFaE3vNOqbHM6lNUhsc7hN-VIg_w0?usp=sharing) 
+* [Count Regression TFLite Models](https://drive.google.com/drive/folders/1haB8WX-D-5mGYq6E6l7uBfTSBImS8Mkd?usp=sharing) 
+* [CSRnet Crowd Counting TFLite Models](https://drive.google.com/drive/folders/1A3Gmw1qXuEwgkAE588GffHyTNxAwZW-W?usp=share_link) 
+* [Yolov7 TFLite Models](https://drive.google.com/drive/folders/1AgB4hLVkeXUeKFLkGIDcwdVJwBIWLPzn?usp=share_link) 
 * [Test_set](https://drive.google.com/file/d/1-cLyBnZ7vjNUK5f0OfGP6QFNwaJo5KXI/view?usp=share_link)
 * [journal]()
 
