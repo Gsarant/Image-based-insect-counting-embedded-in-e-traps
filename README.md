@@ -45,7 +45,7 @@
 |CSRNet _HVGA|0.76|21.26|6300.9|
 |Count_Regression_resnet18|0.27|61.59|380.4|
 |Count_Regression_resnet50|0.36|55.56|698.2|
-[Pytorch models](https://drive.google.com/drive/folders/1hWznPevbgu-tmWLa0HMSLsSQpbUVmtKc?usp=sharing)
+
 
 ###  Raspberry Pi Zero Models Results
 #### Helicoverpa armigera 0-20
