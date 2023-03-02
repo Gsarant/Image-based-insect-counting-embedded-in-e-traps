@@ -10,7 +10,7 @@
 | Count_Regression_resnet18 | 0.72 | 0.54 | 383.5 |
 | Count_Regression_resnet50 | 0.93 | 0.13 | 717.2 |
 
-### Helicoverpa armigera 1-20
+### Helicoverpa armigera 0-20
 | Model Name | A | MAE | Time (ms) |
 | --- | ---- | --- | --- |
 | Yolov7_Helicoverpal CONF 0.3 IOU 0.5 | 0.69 | 4.71 | 535.4|
@@ -20,7 +20,7 @@
 |Count_Regression_Helicoverpa_resnet50|0.69|4.35|699.5|
 
 
-### Plodia interpunctella 1-20
+### Plodia interpunctella 0-20
 | Model Name | A | MAE | Time (ms) |
 | --- | ---- | --- | --- |
 |Yolov7 CONF 0.3 IOU 0.8|0.61|3.00|548.4|

@@ -19,28 +19,32 @@ def predict_num(output_data):
 tmp_folder='../'
 tmp_model_folder=''
 tflite_parameters=[
-                 {'model_name':'CSRNet_Helicoverpa_grey_HVGA_medium_overlap',
-                    'test_image_path':f'{tmp_folder}../data/Helicoverpa_armigera_crowd_overlap/all_overlap',
-                    'path_saved_model_tflite':'/home/giannis/paper2/Insect_CrowdCounting/convert_model/export_10k/CSRNet/Helicoverpa_armigera_grey_HVGA_medium_tf/Helicoverpa_armigera_grey_medium_HVGA_10k-valloss 0.tflite',
-                    'size':(480,320),
-                    'grey':True,
-                    'enable':True,
-                    'create_image':False},
-                {'model_name':'CSRNet_Helicoverpa_color_HVGA_overlap',
+                 {'model_name':'CSRNet_Helicoverpa_color_HVGA_overlap',
                     'test_image_path':f'{tmp_folder}../data/Helicoverpa_armigera_crowd_overlap/all_overlap',
                     'path_saved_model_tflite':'/home/giannis/paper2/Insect_CrowdCounting/convert_model/export_10k/CSRNet/Helicoverpa_armigera_color_HVGA_tf/Helicoverpa_armigera_color_HVGA_10k-valloss 0.tflite',
                     'size':(480,320),
                     'grey':False,
                     'enable':True,
                     'create_image':False},    
-
-                {'model_name':'CSRNet_Helicoverpa_grey_HVGA_medium',
-                    'test_image_path':f'{tmp_folder}../data/Helicoverpa_armigera',
-                    'path_saved_model_tflite':'/home/giannis/paper2/Insect_CrowdCounting/convert_model/export_10k/CSRNet/Helicoverpa_armigera_grey_HVGA_medium_tf/Helicoverpa_armigera_grey_medium_HVGA_10k-valloss 0.tflite',
+                
+                {'model_name':'CSRNet_Helicoverpa_color_HVGA_overlap_quant',
+                    'test_image_path':f'{tmp_folder}../data/Helicoverpa_armigera_crowd_overlap/all_overlap',
+                    'path_saved_model_tflite':'/home/giannis/paper2/Insect_CrowdCounting/convert_model/export_10k_quant/CSRNet/Helicoverpa_armigera_color_HVGA_tf_quant/Helicoverpa_armigera_color_HVGA_10k-valloss 0_quant.tflite',
                     'size':(480,320),
-                    'grey':True,
+                    'grey':False,
                     'enable':True,
                     'create_image':False},
+
+                {'model_name':'CSRNet_Helicoverpa_color_medium_HVGA_overlap',
+                    'test_image_path':f'{tmp_folder}../data/Helicoverpa_armigera_crowd_overlap/all_overlap',
+                    'path_saved_model_tflite':'/home/giannis/paper2/Insect_CrowdCounting/convert_model/export_10k/CSRNet/Helicoverpa_armigera_medium_color_HVGA_tf/Helicoverpa_armigera_color_medium_HVGA_10k-0.tflite',
+                    'size':(480,320),
+                    'grey':False,
+                    'enable':True,
+                    'create_image':False},    
+
+
+               
                 {'model_name':'CSRNet_Helicoverpa_color_HVGA',
                     'test_image_path':f'{tmp_folder}../data/Helicoverpa_armigera',
                     'path_saved_model_tflite':'/home/giannis/paper2/Insect_CrowdCounting/convert_model/export_10k/CSRNet/Helicoverpa_armigera_color_HVGA_tf/Helicoverpa_armigera_color_HVGA_10k-valloss 0.tflite',
@@ -48,15 +52,22 @@ tflite_parameters=[
                     'grey':False,
                     'enable':True,
                     'create_image':False},
-                
-
-                {'model_name':'CSRNet_plodia_grey_HVGA_medium',
-                    'test_image_path':f'{tmp_folder}../data/Plodia_interpunctella',
-                    'path_saved_model_tflite':'/home/giannis/paper2/Insect_CrowdCounting/convert_model/export_10k/CSRNet/Plodia_interpunctella_grey_HVGA_medium_tf/Plodia_interpunctella_grey_medium_HVGA_10k-valloss 0.tflite',
+                {'model_name':'CSRNet_Helicoverpa_color_HVGA_quant',
+                    'test_image_path':f'{tmp_folder}../data/Helicoverpa_armigera',
+                    'path_saved_model_tflite':'/home/giannis/paper2/Insect_CrowdCounting/convert_model/export_10k_quant/CSRNet/Helicoverpa_armigera_color_HVGA_tf_quant/Helicoverpa_armigera_color_HVGA_10k-valloss 0_quant.tflite',
                     'size':(480,320),
-                    'grey':True,
+                    'grey':False,
                     'enable':True,
                     'create_image':False},
+                {'model_name':'CSRNet_Helicoverpa_color_medium_HVGA',
+                    'test_image_path':f'{tmp_folder}../data/Helicoverpa_armigera',
+                    'path_saved_model_tflite':'/home/giannis/paper2/Insect_CrowdCounting/convert_model/export_10k/CSRNet/Helicoverpa_armigera_medium_color_HVGA_tf/Helicoverpa_armigera_color_medium_HVGA_10k-0.tflite',
+                    'size':(480,320),
+                    'grey':False,
+                    'enable':True,
+                    'create_image':False},
+
+                
                 {'model_name':'CSRNet_plodia_color_HVGA',
                     'test_image_path':f'{tmp_folder}../data/Plodia_interpunctella',
                     'path_saved_model_tflite':'/home/giannis/paper2/Insect_CrowdCounting/convert_model/export_10k/CSRNet/Plodia_interpunctella_color_HVGA_tf/Plodia_interpunctella_color_HVGA_10k-valloss 0.tflite',
@@ -64,7 +75,20 @@ tflite_parameters=[
                     'grey':False,
                     'enable':True,
                     'create_image':False},
-                 
+                {'model_name':'CSRNet_plodia_color_HVGA_quant',
+                    'test_image_path':f'{tmp_folder}../data/Plodia_interpunctella',
+                    'path_saved_model_tflite':'/home/giannis/paper2/Insect_CrowdCounting/convert_model/export_10k_quant/CSRNet/Plodia_interpunctella_color_HVGA_tf/Plodia_interpunctella_color_HVGA_10k-valloss 0_quant.tflite',
+                    'size':(480,320),
+                    'grey':False,
+                    'enable':True,
+                    'create_image':False},
+                {'model_name':'CSRNet_plodia_color_medium_HVGA',
+                    'test_image_path':f'{tmp_folder}../data/Plodia_interpunctella',
+                    'path_saved_model_tflite':'/home/giannis/paper2/Insect_CrowdCounting/convert_model/export_10k/CSRNet/Plodia_interpunctella_medium_color_HVGA_tf/Plodia_interpunctella_color_medium_HVGA_10k-0.tflite',
+                    'size':(480,320),
+                    'grey':False,
+                    'enable':True,
+                    'create_image':False}, 
                 
 ]
 LOGS='logs_10k'
@@ -130,7 +154,7 @@ for tflite_parameter in tflite_parameters:
             else:
                 input_data=image
             #Prepair image and inference from model
-            #input_data = np.expand_dims(input_data, axis=0).astype(input_details[0]["dtype"])
+            input_data = input_data.astype(input_details[0]["dtype"])
             interpreter_qt.set_tensor(input_details[0]['index'], input_data)
             interpreter_qt.invoke()
 

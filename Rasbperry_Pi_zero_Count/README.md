@@ -2,7 +2,7 @@
 # Insect Count Methods in Rasbperry Pi zero
 ##  Models Results
 
-### Helicoverpa armigera 1-20
+### Helicoverpa armigera 0-20
 | Model Name | A | MAE | Time (ms) |
 | --- | ---- | --- | --- |
 | Yolov7 CONF 0.3 IOU 0.4 | 0.65 | 5.42 | 32540.3 |
@@ -12,7 +12,7 @@
 | Count_Regression_resnet50 | 0.69 | 4.35 | 3201.8 |
 
 
-### Plodia interpunctella 1-20
+### Plodia interpunctella 0-20
 | Model Name | A | MAE | Time (ms) |
 | --- | ---- | --- | --- |
 | Yolov7 CONF 0.3 IOU 0.8 | 0.58 | 3.64 | 3183.8 |
