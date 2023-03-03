@@ -3,9 +3,6 @@ import cv2
 import matplotlib.pyplot as plt
 from matplotlib import cm
 import shutil
-import math
-import torch.nn as nn
-
 
 import sys
 sys.path.append('../')

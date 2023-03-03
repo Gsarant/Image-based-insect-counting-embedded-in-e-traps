@@ -1,21 +1,10 @@
 import os
 import sys
-import copy
-from io import BytesIO
-
-from PIL import Image,ImageOps
-from PIL import ImageFont
-from PIL import ImageDraw
-from matplotlib import cm
-import matplotlib.pyplot as plt
-
 import cv2
-import logging
 from tqdm import tqdm
 
 import numpy as np
 
-import matplotlib.cm as mpl_color_map
 from torchvision import  transforms
 from torchvision.transforms.functional import to_pil_image
 
@@ -23,11 +12,9 @@ sys.path.append('../train_insect_CSRNet')
 from csrnet import CSRNet,CSRNet_small,CSRNet_medium,CSRNet_medium_color
 import torch
 from imutils import paths
-from datetime import datetime
 import time
 import shutil
 import math
-import torch.nn as nn
 
 
 sys.path.append('../')
@@ -41,40 +28,6 @@ test_transforms= transforms.Compose([transforms.ToTensor(),
                                      transforms.Normalize(mean=[0.485, 0.456, 0.406],
                                                           std=[0.229, 0.224, 0.225]),
                         ])
-
-#def create_test_image(image_name,image,image_predict,pred_label,label,test_save_images_path):
-    #image1 = cv2.resize(image, size, interpolation=cv2.INTER_AREA)
-    # image1 = cv2.resize(image_predict, (image.shape[1],image.shape[0]), interpolation=cv2.INTER_CUBIC)
-    # plt.box(False)
-    # plt.axis('off')
-    # plt.imshow(image1)
-    # plt.imshow(image_predict, alpha=0.3)
-    # plt.show()
-    # buf = BytesIO()        
-    # plt.savefig(buf,bbox_inches='tight',pad_inches = 0,dpi=100)
-    # blended=Image.open(buf)
-    # blended=blended.convert("RGB")
-    # draw = ImageDraw.Draw(blended)
-    # fontsize = 15
-    # font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", fontsize)
-    # draw.text((5, 10),f"CSRNet: {pred_label:.1f}/{label}",(255,255,255),font)
-    
-    # blended.save(saved_image_path(test_save_images_path,image_name,'bled'))
-   
-    
-    #Resize mask and apply colormap
-    #overlay = image_predict.resize(org_im.size, resample=Image.BICUBIC)
-    #overlay = (255 * cmap(np.asarray(overlay) ** 2)[:, :, :3]).astype(np.uint8)
-    # Overlay the image with the mask
-    #overlayed_img = Image.fromarray((alpha * np.asarray(org_im) + (1 - alpha) * overlay).astype(np.uint8)) 
-    #draw = ImageDraw.Draw(overlayed_img)
-    #fontsize = 15
-    #font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", fontsize)
-    #draw.text((5, 10),f"CSRNet: {pred_label:.1f}/{label}",(255,255,255),font)
-    #overlayed_img.save(saved_image_path(test_save_images_path,image_name,'bled'))
-    
-    
-    
 
 test_params=[
 
@@ -229,11 +182,7 @@ for test_param in test_params:
         
         #Load Logger
         test_logger=init_logger(LOGS,test_param['model_name'])
-        
-        #checkpoint = torch.load(test_param['load_saved_parameters'])
-        #model = test_param['model']
-        #model.load_state_dict(checkpoint['model_state_dict'])
-        
+               
         #Load model
         model = torch.load(test_param['load_saved_parameters'])
         model.to(device)
