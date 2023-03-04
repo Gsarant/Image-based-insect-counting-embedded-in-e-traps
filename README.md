@@ -1,6 +1,16 @@
 # Image-based insect counting embedded in e-traps
 ## Image-based insect counting embedded in e-traps that learn without manual image annotation and self-dispose captured insects
 
+## Colab Code 
+### Train Code
+* [Train_Yolov7](https://colab.research.google.com/drive/1YPTy2BdLT_rmfet15bXmzThUruknFMHN?usp=share_link)
+* [Train Insects ResNet](https://colab.research.google.com/drive/1BXVzh9hvDzoAUodfkGG-ARkmUaIZ6lwg?usp=share_link)
+* [Train Insects CSRNet](https://colab.research.google.com/drive/1L0do5A0b33fz8nl8KdHnYwzMewXKsh_T?usp=share_link)
+### Test Code
+* [Test Yolov7](https://colab.research.google.com/drive/1NPSqJYiZJOtaQ3UPn8Z7enUVFAnLa-ij?usp=share_link)
+* [Test Insects ResNet](https://colab.research.google.com/drive/1gyHt14CDZv72gjv9XsJxitZzEa6MFf-z?usp=share_link)
+* [Test Insects CSRNet](https://colab.research.google.com/drive/1CR9tcJtnquS81vZ1CfkTYxb7wcFFJ_bS?usp=share_link)
+
 ###  Raspberry Pi 4 B Models Results
 #### Overlap
 | Model Name | pa | MAE | Time (ms) |
